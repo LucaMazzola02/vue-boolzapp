@@ -23,42 +23,79 @@ body{
     width: 65%;
 }
 
-.header-content{
+.header-content,
+.top-sidebar{
     background-color: rgba(234,234,234,255);
     height: 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1.5rem;
+    padding: 0 1.5rem 0 1rem;
 }
 
 .left-size{display: flex;align-items: center;}
 
 .img-content{
     height: 60px;
-    width: 60px;
-    
+    width: 60px; 
 }
 
 .img-content img{width: 100%;height: 100%;object-fit: cover;border-radius: 50%;}
 
 .description{
-    margin-left: 1.2rem;
+    margin-left: .7rem;
     line-height: 1.3rem;
 }
 .right-size i{
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: rgba(175,175,177,255);
-    margin-left: 1.4rem;
+    margin-left: 1rem;
 }
 .right-size i:hover{color: #333;}
 
 .main-content{
+    display: flex;
+    justify-content: space-between;
     height: 80%;
     background-image: url(img/mine.jpg);
+    overflow-y: scroll;
+    padding: 3rem 4rem;
 }
+
+.sent-mess-container,
+.rece-mess-container{
+    width: 40%;
+}
+
+.messagge{
+    position: relative;
+    border-radius: 8px;
+    background-color: rgba(213,249,186,255);
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.hours{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: #bebebe;
+    font-size: 10px;
+}
+
+.sent-messagge{background-color: #fff;}
+.rece-messagge{background-color: rgba(213,249,186,255);}
+
 
 .footer-content{
     height: 10%;
     background-color: rgba(234,234,234,255);
 }
+
+
+
+.sidebar{
+    border-right: 1px solid #bebebe;
+}
+
+
