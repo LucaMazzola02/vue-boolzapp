@@ -21,6 +21,7 @@
                 <div class="container"> 
 
                     <div class="sidebar">
+<!--profile-->                         
                         <div class="top-sidebar">
                             <section class="left-size">
                                 <div class="img-content">
@@ -37,6 +38,7 @@
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </section>
                         </div>
+<!--cta-->                        
                         <div class="cta">
                             <div class="bell">
                                 <i id="bell" class="fa-solid fa-bell-slash"></i>
@@ -46,15 +48,29 @@
                                 <a href="" id="underline">Attiva notifiche desktop</a>
                             </div>
                         </div>
-                        <div class="contacts">
-                            <section class="search-bar">
+<!--search-bar-->
+                        <section class="search-bar">
                                 <div class="search">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 <input type="text" placeholder="Cerca o inizia una nuova ricerca">
                             </div>                 
-                            </section>
-                            <section></section>
-                        </div>
+                        </section>
+<!--contacts-list-->
+                        <div class="contacts-list">
+                                <div class="single-contact" v-for="contact in contacts">
+
+                                  <div class="avatar-img">
+                                    <img :src="contact.avatar" :alt="contact.name + 'avatar-image'">
+                                  </div>
+
+                                  <div class="description">
+                                    <h3>{{ contact.name }}</h3>
+                                    <p class="last-messagge">Ultimo messaggio inviato</p>
+                                    <span class="lasted-mess-hour">12.00</span>
+                                  </div>
+
+                                </div>
+                        </div>   
 
                     </div>
 
