@@ -59,7 +59,7 @@
                         <div class="contacts-list">
 
                             
-                                <div class="single-contact" v-for="(contact,index) in contacts" :class="index === activeIndex ? 'active' : ''">
+                                <div class="single-contact" v-for="(contact,index) in contacts" @click="goToContact(index)" >
                                   <div class="avatar-img">
                                     <img :src="contact.avatar" :alt="contact.name + 'avatar-image'">
                                   </div>
@@ -96,17 +96,17 @@
 
                         </div>
 
-                        <div class="main-content clearfix" >
-                                <div class="messagge sent-messagge" v-for="contact in contacts">
+                        <div class="main-content clearfix" :class="index === activeIndex ? 'active' : ''">
+                                <div class="messagge sent-messagge">
                                     <span>{{contact.messages[0].message}}</span>
                                     <span class="hours">15.30</span>
                                 </div>
                                 <div class="messagge sent-messagge">
-                                    <span>Ricordati di stendere i panni</span>                          
+                                    <span>{{contact.messages[1].message}}</span>                          
                                     <span class="hours">15.50</span>
                                 </div>
                                 <div class="messagge rece-messagge">
-                                    <span>Tutto fatto!</span>                                  
+                                    <span>T{{contact.messages[2].message}}</span>                                  
                                     <span class="hours">16.15</span>
                                 </div>                                      
                         </div>

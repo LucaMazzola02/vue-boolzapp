@@ -169,8 +169,15 @@ createApp({
             activeIndex : 0,           
         }
     },
-    
+
     methods: {
+        goToContact(contactIndex){
+            if (contactIndex >= this.messages.length || contactIndex < 0){
+                return 0;
+            }
+
+            this.activeIndex = contactIndex;
+        },
         
     },
 

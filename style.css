@@ -182,8 +182,6 @@ body{
     border-bottom: 1px solid #bebebe;
 }
 
-.single-contact:hover{background-color: #e7e7e7;}
-
 .lasted-mess-hour{
     position: absolute;
     top: 8px;
@@ -201,6 +199,7 @@ body{
     font-size: 14px;
 }
 
+.active{background-color: #e7e7e7;}
 
 
 
