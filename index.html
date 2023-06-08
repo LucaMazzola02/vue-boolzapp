@@ -57,8 +57,9 @@
                         </section>
 <!--contacts-list-->
                         <div class="contacts-list">
-                                <div class="single-contact" v-for="contact in contacts">
 
+                            
+                                <div class="single-contact" v-for="(contact,index) in contacts" :class="index === activeIndex ? 'active' : ''">
                                   <div class="avatar-img">
                                     <img :src="contact.avatar" :alt="contact.name + 'avatar-image'">
                                   </div>
@@ -68,7 +69,6 @@
                                     <p class="last-messagge">Ultimo messaggio inviato</p>
                                     <span class="lasted-mess-hour">12.00</span>
                                   </div>
-
                                 </div>
                         </div>   
 
@@ -96,25 +96,19 @@
 
                         </div>
 
-                        <div class="main-content">
-                            <div class="mess-container">
-                                <div class="messagge sent-messagge">Hai portato a spasso il cane?
-                                    <div class="hours">15.30</div>
+                        <div class="main-content clearfix" >
+                                <div class="messagge sent-messagge" v-for="contact in contacts">
+                                    <span>{{contact.messages[0].message}}</span>
+                                    <span class="hours">15.30</span>
                                 </div>
-                            </div>
-                            <div class="mess-container">
-                                <div class="messagge sent-messagge">Ricordati di stendere i panni
-                                    <div class="hours">15.50</div>
+                                <div class="messagge sent-messagge">
+                                    <span>Ricordati di stendere i panni</span>                          
+                                    <span class="hours">15.50</span>
                                 </div>
-                            </div>
-                            <div class="mess-container">
-                                <div class="messagge rece-messagge">Tutto fatto!
-                                    <div class="hours">16.15</div>
-                                </div> 
-                            </div>
-                                 
-                                         
-                            
+                                <div class="messagge rece-messagge">
+                                    <span>Tutto fatto!</span>                                  
+                                    <span class="hours">16.15</span>
+                                </div>                                      
                         </div>
 
                         <div class="footer-content">

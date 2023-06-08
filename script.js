@@ -165,11 +165,15 @@ createApp({
                         }
                     ],
                 }
-            ]           
+            ],
+            activeIndex : 0,           
         }
+    },
+    
+    methods: {
+        
     },
 
    
-
 }).mount('#app');
 

@@ -6,6 +6,11 @@ body{
 
 .background{height: 100vh; background: linear-gradient(to top, rgba(216,219,213,255), rgba(216,219,213,255), rgba(216,219,213,255) 80%, rgba(0,150,136,255) 80%);padding: 3rem 0;}
 
+.clearfix::after{
+    clear: both;
+    display: block;
+    content: '';
+}
 
 .container{
     display: flex;
@@ -62,19 +67,14 @@ body{
     padding: 3rem 4rem;
 }
 
-.mess-container{
-    height: 50px;
-    position: relative;
-    margin-bottom: 1rem;
-}
-
 .messagge{
-    display: block;
     width: 40%;
-    position: absolute;
+    position: relative;
     border-radius: 8px;
     background-color: rgba(213,249,186,255);
     padding: 1rem;
+    margin-bottom: 0.5rem;
+    clear: both;
 }
 
 .hours{
@@ -85,8 +85,8 @@ body{
     font-size: 10px;
 }
 
-.sent-messagge{background-color: rgba(213,249,186,255);right: 0;}
-.rece-messagge{background-color: #fff;}
+.sent-messagge{background-color: rgba(213,249,186,255);float: right;}
+.rece-messagge{background-color: #fff;float: left;}
 
 
 .footer-content{
