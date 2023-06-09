@@ -180,9 +180,9 @@ createApp({
         
     },
 
-    addNewMessagge(singleMessagge){
+    addNewMessagge(singleMessagge,indexMessagge){
         if (this.outputMessagge !== ''){
-            this.contacts.messages.push({
+            this.contacts[indexMessagge].messages.push({
                     date: 'now',
                     message: singleMessagge,
                     status: 'sent',
