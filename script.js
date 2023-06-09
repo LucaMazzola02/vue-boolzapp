@@ -172,15 +172,11 @@ createApp({
 
     methods: {
         goToContact(contactIndex){
-            if (contactIndex >= this.messages.length || contactIndex < 0){
-                return 0;
-            }
 
             this.activeIndex = contactIndex;
-        },
         
     },
 
    
-}).mount('#app');
+}}).mount('#app');
 
