@@ -166,7 +166,10 @@ createApp({
                     ],
                 }
             ],
-            activeIndex : 0,           
+            activeIndex : 0,  
+            outputMessagge : '',
+        
+        
         }
     },
 
@@ -175,6 +178,18 @@ createApp({
 
             this.activeIndex = contactIndex;
         
+    },
+
+    addNewMessagge(singleMessagge){
+        if (this.outputMessagge !== ''){
+            this.contacts.messages.push({
+                    date: 'now',
+                    message: singleMessagge,
+                    status: 'sent',
+                }        
+        );
+            this.outputMessagge = '';
+        }
     },
 
    

@@ -106,7 +106,8 @@
                         <div class="footer-content">
                             <section><i class="fa-regular fa-face-smile"></i></section>
                             <section>
-                                <input type="text" placeholder="Scrivi un messaggio">
+                                <input type="text" placeholder="Scrivi un messaggio" v-model="outputMessagge" 
+                                @keyup.enter="addNewMessagge(outputMessagge)">
                             </section>
                             <section><i class="fa-solid fa-microphone"></i></section>
                         </div>
