@@ -168,6 +168,7 @@ createApp({
             ],
             activeIndex : 0,  
             outputMessagge : '',
+            autoplay: false,
         
         
         }
@@ -183,15 +184,26 @@ createApp({
     addNewMessagge(singleMessagge,indexMessagge){
         if (this.outputMessagge !== ''){
             this.contacts[indexMessagge].messages.push({
-                    date: 'now',
+                    date: '',
                     message: singleMessagge,
                     status: 'sent',
                 }        
         );
             this.outputMessagge = '';
+            setTimeout(affermativeAnswer, 1000);
         }
     },
 
+    affermativeAnswer(indexMessagge){
+            this.contacts[indexMessagge].messages.push({
+                    date: '',
+                    message: 'ok',
+                    status: 'received',
+                })
+    }
+
+    },
+
    
-}}).mount('#app');
+}).mount('#app');
 
