@@ -168,9 +168,13 @@ createApp({
             ],
             activeIndex : 0,  
             messageInput : '',
-            
-        
-        
+            contactSearchInput: ''
+        }
+    },
+    computed:{
+        searchedList(){
+            return this.contacts.filter( contact=>
+                contact.name.toLowerCase().includes(this.contactSearchInput.toLowerCase()));
         }
     },
 

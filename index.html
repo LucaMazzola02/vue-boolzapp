@@ -52,14 +52,14 @@
                         <section class="search-bar">
                                 <div class="search">
                                     <i class="fa-solid fa-magnifying-glass"></i>
-                                <input type="text" placeholder="Cerca o inizia una nuova ricerca">
+                                <input type="text" placeholder="Cerca o inizia una nuova ricerca" v-model="contactSearchInput">
                             </div>                 
                         </section>
 <!--contacts-list-->
                         <div class="contacts-list">
 
                             
-                                <div class="single-contact" v-for="(contact,index) in contacts" @click="goToContact(index)" :class="(index === activeIndex) ? 'active' : ''">
+                                <div class="single-contact" v-for="(contact,index) in searchedList" @click="goToContact(index)" :class="(index === activeIndex) ? 'active' : ''">
                                   <div class="avatar-img">
                                     <img :src="contact.avatar" :alt="contact.name + 'avatar-image'">
                                   </div>
@@ -80,10 +80,10 @@
 
                             <section class="left-size">
                                 <div class="img-content">
-                                    <img :src="contacts[activeIndex].avatar" alt="avatar-image">
+                                    <img :src="searchedList[activeIndex].avatar" alt="avatar-image">
                                 </div>
                                 <div class="description">
-                                    <h4>{{contacts[activeIndex].name}}</h4>
+                                    <h4>{{searchedList[activeIndex].name}}</h4>
                                     <p>Ultimo accesso oggi</p>
                                 </div>
                                 
@@ -97,7 +97,7 @@
                         </div>
 
                         <div class="main-content clearfix">
-                                <div class="messagge" v-for="messageObj in contacts[activeIndex].messages" :class="(messageObj.status === 'sent') ? 'sent-messagge' : 'rece-messagge'">
+                                <div class="messagge" v-for="messageObj in searchedList[activeIndex].messages" :class="(messageObj.status === 'sent') ? 'sent-messagge' : 'rece-messagge'">
                                     <span>{{messageObj.message}}</span>
                                     <span class="hours">{{messageObj.date}}</span>
                                 </div>                                  
