@@ -167,8 +167,8 @@ createApp({
                 }
             ],
             activeIndex : 0,  
-            outputMessagge : '',
-            autoplay: false,
+            messageInput : '',
+            
         
         
         }
@@ -181,29 +181,29 @@ createApp({
         
     },
 
-    addNewMessagge(singleMessagge,indexMessagge){
-        if (this.outputMessagge !== ''){
-            this.contacts[indexMessagge].messages.push({
-                    date: '',
-                    message: singleMessagge,
-                    status: 'sent',
-                }        
-        );
-            this.outputMessagge = '';
-            setTimeout(affermativeAnswer, 1000);
+    newUserMessage(index, message){
+        if (message === ''){
+            return false;
         }
+
+        this.sendNewMessage(index, message, true);
+        this.messageInput = '';
+
+        setTimeout(() => {
+            this.sendNewMessage(index, 'ok!', false);
+        }, 1000);
     },
 
-    affermativeAnswer(indexMessagge){
-            this.contacts[indexMessagge].messages.push({
-                    date: '',
-                    message: 'ok',
-                    status: 'received',
-                })
-    }
+    sendNewMessage(index, message, isMessageSent){
+        const messageObj = {
+            date: 'now',
+            message: message,
+            status: isMessageSent ? 'sent' : 'received'
+        }
 
+        this.contacts[index].messages.push(messageObj);
     },
-
+},
    
 }).mount('#app');
 
